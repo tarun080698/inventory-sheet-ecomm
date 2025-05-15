@@ -42,6 +42,7 @@ export default function App() {
 
       // Get the auth instance
       const authInstance = gapi.auth2.getAuthInstance();
+      console.log(authInstance?.currentUser.le.wt.cu)
 
       // Set the initial sign-in state
       const signedIn = authInstance.isSignedIn.get();
