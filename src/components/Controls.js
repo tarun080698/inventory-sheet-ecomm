@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Controls({ onAdd }) {
+export default function Controls({ onAdd, email="email" }) {
   const [draft, setDraft] = useState({
     style: { value: "", placeholder: "Select Style Code" },
     quantity: { value: "", placeholder: "Select Quantity" },
@@ -26,8 +26,8 @@ export default function Controls({ onAdd }) {
     if (hasValue) {
       // Create array from object values in the correct order
       const rowValues = [
-        "Email Address", // Required metadata
-        new Date().toISOString(), // Timestamp
+        new Date().toISOString(), // Timestamp 
+        email, // Required metadata
         draft.style.value,
         draft.quantity.value,
         draft.color.value,
